@@ -183,7 +183,6 @@ words = [
     "może",
     "było",
 ]
-
 import random
 
 
@@ -193,7 +192,7 @@ def find(s, ch):
 
 # word = input("Podaj Słowo\n")
 word = random.choice(words)
-print(word)
+print(word)  # Dla ułatwienia przy sprawdzaniu
 
 len_word = len(word)
 list_letters = [letter.lower() for letter in word]
@@ -209,7 +208,7 @@ while run:
         if litera == word:
             print("\n\n\nWygrałeś!")
             run = False
-        elif litera != word:
+        else:
             hp -= 1
     else:
         if litera in list_letters:
@@ -222,9 +221,8 @@ while run:
 
     if hp == 0:
         print("\n\n\nPrzegrałeś")
+        print(f"Słowo: {word}")
         run = False
     if list_letters == []:
         print("\n\n\nWygrałeś!")
         run = False
-
-print(f"Słowo: {word}")
